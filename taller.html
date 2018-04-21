@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue">
+        
+        </script>
+    </head>
+</html>
+<body>
+    <main>
+        <table>
+            <thead>
+                <th>NOMBRES</th>
+                <th>CEDULA</th>
+                <th>TELEFONO</th>
+                <th>EDAD</th>
+                <th>CONDICION</th>
+            </thead>
+            <body>
+                <tr v-for="(item,idx) in users">
+                    <td>{{item.Nombres}}</td>
+                    <td>{{item.Cedula}}</td>
+                    <td>{{item.Telefono}}</td>
+                    <td>{{item.Edad}}</td>
+                    
+                </tr>
+            </body>
+        </table>
+
+        <form @submit.prevent="createUser">
+            <input type="text" placeholder="Nombres" v-model="objUser.Nombres"/>
+            <input type="text" placeholder="Cedula" v-model="objUser.Cedula"/>
+            <input type="text" placeholder="Telefono" v-model="objUser.Telefono"/>
+            <input type="text" placeholder="Edad" v-model="objUser.Edad"/>
+            <input type="submit" value="GUARDAR"/>
+        </form>
+
+    </main>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:'main',
+        data:{
+            users:[
+
+            ],
+            objUser:{'Nombres':null,'Cedula':null,'Telefono':null,'Edad':null}
+        },
+        methods:{
+            createUser(){
+                this.users.unshift(this.objUser);
+                this.orderUser;
+                this.objUser={'nombre':null,'apellido':null,'Telefono':null,'Edad':null}
+            }
+        },
+        computed:{
+            orderUser(){
+                return this.users.sort(function(a,b){
+                    if(a.nombre > b.nombre){
+                        return 1;
+                    }
+                    if(a.nombre < b.nombre){
+                        return -1;
+                    }
+                    return 0;
+                })
+            }
+        }
+    });
+</script>

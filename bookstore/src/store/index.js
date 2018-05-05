@@ -1,6 +1,8 @@
 import vue from 'vue';
 import vuex from 'vuex';
 vue.use(Vuex);
+
+import authModule from '@/modules/auth'
 export default new Vuex.Store({
     state:{
         processing:false,
@@ -25,8 +27,9 @@ export default new Vuex.Store({
                 state.alert.message='';
             },data.timeout);  
         },
+                    
+        },
         modules:{
-            
-        }
+            authModule
     }
 });

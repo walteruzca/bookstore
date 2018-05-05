@@ -1,0 +1,19 @@
+git clone https://github.com/walteruzca/bookstore.git
+
+cd bookstore\
+
+php -Slocalhost 8000
+
+git add .
+
+git status
+
+git commit -m "Introduccion a vuejs"
+
+git config --global user.email "wuzca5502@gmail.com"
+
+git config --global user.name "wuzca5502@gmail.com"
+
+git commit -m "introduccion a vuejs"
+
+ git push

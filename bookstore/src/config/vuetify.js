@@ -1,4 +1,4 @@
-import vue from 'vue';
+import Vue from 'vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import colors from 'vuetify/es5/util/colors';
@@ -11,5 +11,3 @@ Vue.use(Vuetify,{
         bluecustom: colors.blue.lighten1
     }
 });
-
-require('./config/vuetify');
